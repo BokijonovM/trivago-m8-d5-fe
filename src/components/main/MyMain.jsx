@@ -23,7 +23,10 @@ function MyMain() {
           </h6>
         </div>
       </Row>
-      <Row className=" py-5 flex-column row-2-main-page">
+      <Row
+        className=" py-5 flex-column row-2-main-page"
+        style={{ marginBottom: "170px" }}
+      >
         <Row className="w-100">
           <div>
             <Button className="mr-2 button-class-0" variant="info">

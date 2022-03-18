@@ -53,3 +53,9 @@
   height: 60%;
   border-left: 0.2px solid grey;
 }
+.footer-main-div {
+  background-color: #0a1121;
+}
+.h-line-row {
+  border-bottom: 1px solid white;
+}
