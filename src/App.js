@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MyMain from "./components/main/MyMain";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MyLogin from "./components/login/MyLogin";
-import MySignUp from "./components/singin/MySignUp";
+import MySignUp from "./components/singUp/MySignUp";
 import Home from "./components/home/Home";
 
 function App() {

@@ -43,6 +43,8 @@
   padding: 0;
 }
 .continue-with-btn {
+  border : 1px solid lightgrey;
+  padding : 4px 6px;
   border-radius: 0px;
   background-color: transparent;
   color: black;

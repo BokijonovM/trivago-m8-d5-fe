@@ -4,6 +4,7 @@ import { Row, Col, Button, Form } from "react-bootstrap";
 import { AiOutlineGooglePlus, AiFillApple } from "react-icons/ai";
 import { FaFacebookSquare } from "react-icons/fa";
 import { useNavigate, Link } from "react-router-dom";
+import OauthLinks from "./OauthLinks";
 
 function MyLogin() {
   const [email, setEmail] = useState("");
@@ -63,21 +64,7 @@ function MyLogin() {
           </Col>
           <div className="col-3-login pl-3 mt-5"></div>
           <Col className="col-2-login pl-3 mb-5">
-            <h6>Or use trivago with another account</h6>
-            <a href="http://localhost:3001/users/googleLogin">
-                <span className="my-1 continue-with-btn" variant="secondary">
-                <AiOutlineGooglePlus />
-                Continue with Google
-              </span>
-            </a>
-            <Button className="my-1 continue-with-btn" variant="secondary">
-              <FaFacebookSquare />
-              Continue with Facebook
-            </Button>
-            <Button className="my-1 continue-with-btn" variant="secondary">
-              <AiFillApple />
-              Continue with Apple
-            </Button>
+            <OauthLinks/>
           </Col>
         </Row>
       </div>
