@@ -45,7 +45,7 @@ function MainNav() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="#home">Login</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
             <NavDropdown className="ml-5" title="Menu" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

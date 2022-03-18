@@ -61,8 +61,7 @@ function MyMain() {
                 </p>
               </div>
             </div>
-            <div className="check-in-out-v-line"></div>
-            <div className="d-flex align-items-center ml-2">
+            <div className="d-flex align-items-center ml-2 check-in-out-v-line">
               <div className="ml-2">
                 <p className="mb-0" style={{ fontSize: "12px" }}>
                   Check out

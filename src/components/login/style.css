@@ -1,0 +1,49 @@
+.main-div-login {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  flex-direction: column;
+  align-items: center;
+}
+.shadow-needed {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 65vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.create-account-btn {
+  border-radius: 0px;
+  background-color: transparent;
+  margin-top: 20px;
+  color: black;
+}
+.trivago-main-page-h1-text-1 {
+  font-size: 40px;
+  font-weight: 650;
+  margin-top: 10px;
+}
+.col-1-login {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  padding: 0;
+}
+
+.col-2-login {
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+  padding: 0;
+}
+.col-3-login {
+  border-right: 1px solid grey;
+  height: 100%;
+  padding: 0;
+}
+.continue-with-btn {
+  border-radius: 0px;
+  background-color: transparent;
+  color: black;
+}
