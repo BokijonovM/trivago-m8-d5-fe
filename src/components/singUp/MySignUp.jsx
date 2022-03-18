@@ -32,9 +32,10 @@ function MySignUp() {
       }
       if (res.ok) {
         let data = await res.json();
+        localStorage.setItem("MyToken", data.token);
         console.log(data.posts);
         console.log("Successfully registered!");
-        navigate("/");
+        navigate("/home");
       }
     } catch (error) {
       console.log(error);
@@ -113,7 +114,7 @@ function MySignUp() {
           </Col>
           <div className="col-3-login pl-3 mt-5"></div>
           <Col className="col-2-login pl-3">
-          <OauthLinks/>
+            <OauthLinks />
           </Col>
         </Row>
       </div>
