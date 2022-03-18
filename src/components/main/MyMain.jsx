@@ -1,6 +1,6 @@
 import React from "react";
 import MainNav from "./MainNav";
-import { Row, Button } from "react-bootstrap";
+import { Row, Button, Form } from "react-bootstrap";
 import MyFooter from "./MyFooter";
 import { BsSearch, BsFillCalendarEventFill, BsPeople } from "react-icons/bs";
 
@@ -40,8 +40,15 @@ function MyMain() {
             </Button>
           </div>
           <div className="search-form-div">
-            <div className="ml-2 text-muted">
-              <BsSearch /> Enter a hotel name or destination
+            <div className="ml-2 d-flex align-items-center text-muted">
+              <BsSearch />
+              <Form.Group controlId="formBasicText">
+                <Form.Control
+                  className="border-0 shadow-none"
+                  type="text"
+                  placeholder="Enter a hotel name or destination"
+                />
+              </Form.Group>
             </div>
             <div className="d-flex align-items-center v-line-needed ml-2 pl-3">
               <BsFillCalendarEventFill />
@@ -106,3 +113,4 @@ function MyMain() {
 }
 
 export default MyMain;
+// Enter a hotel name or destination
