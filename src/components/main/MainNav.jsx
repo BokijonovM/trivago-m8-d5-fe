@@ -11,7 +11,7 @@ function MainNav() {
     <div>
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="#home" className="p-0">
-          <div className="mr-4">
+          <div className="mr-4 d-flex flex-column justify-content-center align-items-center">
             <p className="mb-0">
               <BsFillInboxFill />
             </p>
@@ -19,7 +19,7 @@ function MainNav() {
           </div>
         </Navbar.Brand>
         <Navbar.Brand href="#home" className="p-0">
-          <div className="mr-4">
+          <div className="mr-4 d-flex flex-column justify-content-center align-items-center">
             <p className="mb-0">
               <AiFillCar />
             </p>
@@ -27,7 +27,7 @@ function MainNav() {
           </div>
         </Navbar.Brand>
         <Navbar.Brand href="#home" className="p-0">
-          <div className="mr-4">
+          <div className="mr-4 d-flex flex-column justify-content-center align-items-center">
             <p className="mb-0">
               <IoMdAirplane />
             </p>
@@ -35,7 +35,7 @@ function MainNav() {
           </div>
         </Navbar.Brand>
         <Navbar.Brand href="#home" className="p-0">
-          <div className="mr-4">
+          <div className="mr-4 d-flex flex-column justify-content-center align-items-center">
             <p className="mb-0">
               <RiLuggageDepositLine />
             </p>
