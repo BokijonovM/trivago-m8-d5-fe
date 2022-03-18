@@ -51,7 +51,13 @@ function MyLogin() {
                 />
               </Form.Group>
             </Form>
-            <Button className="my-3" variant="secondary">
+            <Button
+              className="mt-3 mb-5"
+              variant="secondary"
+              type="submit"
+              disabled={!email || !password}
+              onClick={() => handelRegister()}
+            >
               Login
             </Button>
           </Col>

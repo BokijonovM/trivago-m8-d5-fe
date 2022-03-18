@@ -60,7 +60,7 @@ function MySignIn() {
               variant="secondary"
               type="submit"
               disabled={!email || !password}
-              onClick={() => handelRegister}
+              onClick={() => handelRegister()}
             >
               Register
             </Button>
