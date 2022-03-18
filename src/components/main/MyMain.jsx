@@ -40,7 +40,7 @@ function MyMain() {
             <div className="ml-2 text-muted">
               <BsSearch /> Enter a hotel name or destination
             </div>
-            <div className="d-flex align-items-center ml-2">
+            <div className="d-flex align-items-center v-line-needed ml-2 pl-3">
               <BsFillCalendarEventFill />
               <div className="ml-2">
                 <p className="mb-0" style={{ fontSize: "12px" }}>
@@ -51,6 +51,7 @@ function MyMain() {
                 </p>
               </div>
             </div>
+            <div className="check-in-out-v-line"></div>
             <div className="d-flex align-items-center ml-2">
               <div className="ml-2">
                 <p className="mb-0" style={{ fontSize: "12px" }}>
@@ -61,7 +62,8 @@ function MyMain() {
                 </p>
               </div>
             </div>
-            <div className="d-flex align-items-center mx-2">
+
+            <div className="d-flex align-items-center v-line-needed mx-2 pl-3">
               <BsPeople />
               <div className="ml-2">
                 <p className="mb-0" style={{ fontSize: "12px" }}>

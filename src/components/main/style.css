@@ -10,7 +10,7 @@
   border-right: 0.5px solid grey;
 }
 .row-2-main-page {
-  background-color: rgb(221, 221, 221);
+  background-color: #f9fafa;
 }
 
 .row-1 {
@@ -44,4 +44,12 @@
   border-bottom-right-radius: 0px;
   border: 0px;
   color: black;
+}
+.v-line-needed {
+  height: 100%;
+  border-left: 0.2px solid rgb(194, 194, 194);
+}
+.check-in-out-v-line {
+  height: 60%;
+  border-left: 0.2px solid grey;
 }
