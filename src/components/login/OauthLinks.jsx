@@ -1,8 +1,11 @@
 import { Button } from "react-bootstrap";
 import { AiOutlineGooglePlus, AiFillApple } from "react-icons/ai";
 import { FaFacebookSquare } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function OauthLinks() {
+    
+    const navigate = useNavigate();
     return ( 
         <>
          <h6>Or use trivago with another account</h6>
