@@ -3,7 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MyMain from "./components/main/MyMain";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MyLogin from "./components/login/MyLogin";
-import MySignIn from "./components/singin/MySignIn";
+import MySignUp from "./components/singin/MySignUp";
+import Home from "./components/home/Home";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<MyMain />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<MyLogin />} />
-          <Route path="/sign-in" element={<MySignIn />} />
+          <Route path="/sign-in" element={<MySignUp />} />
         </Routes>
       </div>
     </BrowserRouter>

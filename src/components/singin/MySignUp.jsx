@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineGooglePlus, AiFillApple } from "react-icons/ai";
 import { FaFacebookSquare } from "react-icons/fa";
 
-function MySignIn() {
+function MySignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -87,4 +87,4 @@ function MySignIn() {
   );
 }
 
-export default MySignIn;
+export default MySignUp;

@@ -64,10 +64,12 @@ function MyLogin() {
           <div className="col-3-login pl-3 mt-5"></div>
           <Col className="col-2-login pl-3 mb-5">
             <h6>Or use trivago with another account</h6>
-            <Button className="my-1 continue-with-btn" variant="secondary">
-              <AiOutlineGooglePlus />
-              Continue with Google
-            </Button>
+            <a href="http://localhost:3001/users/googleLogin">
+                <span className="my-1 continue-with-btn" variant="secondary">
+                <AiOutlineGooglePlus />
+                Continue with Google
+              </span>
+            </a>
             <Button className="my-1 continue-with-btn" variant="secondary">
               <FaFacebookSquare />
               Continue with Facebook
