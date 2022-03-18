@@ -10,8 +10,32 @@ function MyLogin() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handelRegister = () => {
-    navigate("/");
+  //   const handelRegister = () => {
+  //     navigate("/");
+  //   };
+
+  const handleRegister = async () => {
+    const newPost = {
+      email: email,
+      password: password,
+    };
+    try {
+      let res = await fetch("http://localhost:3001/users/login", {
+        method: "POST",
+        body: JSON.stringify(newPost),
+        headers: { "Content-type": "application/json" },
+      });
+      if (res.status !== 200) alert("you you entered wrong password or email");
+      if (res.ok) {
+        let data = await res.json();
+        console.log(data.posts);
+        localStorage.setItem("MyToken", data.token);
+        navigate("/");
+        console.log("Successfully logged in!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="main-div-login">
@@ -29,7 +53,7 @@ function MyLogin() {
           <Col className="col-1-login">
             <h4>Log in or create an account</h4>
             <p>Enter your e-mail address to start</p>
-            <Form onSubmit={handelRegister}>
+            <Form>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
@@ -56,7 +80,7 @@ function MyLogin() {
               variant="secondary"
               type="submit"
               disabled={!email || !password}
-              onClick={() => handelRegister()}
+              onClick={() => handleRegister()}
             >
               Login
             </Button>
@@ -65,7 +89,7 @@ function MyLogin() {
           <Col className="col-2-login pl-3 mb-5">
             <h6>Or use trivago with another account</h6>
             <a href="http://localhost:3001/users/googleLogin">
-                <span className="my-1 continue-with-btn" variant="secondary">
+              <span className="my-1 continue-with-btn" variant="secondary">
                 <AiOutlineGooglePlus />
                 Continue with Google
               </span>
