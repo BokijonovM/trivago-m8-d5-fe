@@ -4,6 +4,7 @@ import { Row, Col, Button, Form } from "react-bootstrap";
 import { AiOutlineGooglePlus, AiFillApple } from "react-icons/ai";
 import { FaFacebookSquare } from "react-icons/fa";
 import { useNavigate, Link } from "react-router-dom";
+import OauthLinks from "./OauthLinks";
 
 function MyLogin() {
   const [email, setEmail] = useState("");
@@ -102,6 +103,7 @@ function MyLogin() {
               <AiFillApple />
               Continue with Apple
             </Button>
+            <OauthLinks />
           </Col>
         </Row>
       </div>
