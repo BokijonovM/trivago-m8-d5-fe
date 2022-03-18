@@ -5,6 +5,7 @@ import { AiFillCar } from "react-icons/ai";
 import { IoMdAirplane } from "react-icons/io";
 import { RiLuggageDepositLine } from "react-icons/ri";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 function MainNav() {
   return (
@@ -45,7 +46,12 @@ function MainNav() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link>
+              <Link to="/login" style={{ textDecoration: "none" }}>
+                Login
+              </Link>
+            </Nav.Link>
+
             <NavDropdown className="ml-5" title="Menu" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

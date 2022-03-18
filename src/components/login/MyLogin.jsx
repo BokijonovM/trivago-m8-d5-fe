@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import { Row, Col, Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { AiOutlineGooglePlus, AiFillApple } from "react-icons/ai";
+import { FaFacebookSquare } from "react-icons/fa";
+import { useNavigate, Link } from "react-router-dom";
 
 function MyLogin() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handelRegister = () => {
+    navigate("/");
+  };
   return (
     <div className="main-div-login">
       <div className="shadow-needed">
@@ -20,28 +29,45 @@ function MyLogin() {
           <Col className="col-1-login">
             <h4>Log in or create an account</h4>
             <p>Enter your e-mail address to start</p>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                className="shadow-none"
-                type="email"
-                placeholder="Enter email"
-              />
-            </Form.Group>
+            <Form onSubmit={handelRegister}>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="shadow-none"
+                  type="email"
+                  placeholder="Enter email"
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="shadow-none"
+                  type="password"
+                  placeholder="Enter password"
+                />
+              </Form.Group>
+            </Form>
             <Button className="my-3" variant="secondary">
-              Create an account
+              Login
             </Button>
           </Col>
           <div className="col-3-login pl-3 mt-5"></div>
-          <Col className="col-2-login pl-3">
+          <Col className="col-2-login pl-3 mb-5">
             <h6>Or use trivago with another account</h6>
             <Button className="my-1 continue-with-btn" variant="secondary">
+              <AiOutlineGooglePlus />
               Continue with Google
             </Button>
             <Button className="my-1 continue-with-btn" variant="secondary">
+              <FaFacebookSquare />
               Continue with Facebook
             </Button>
             <Button className="my-1 continue-with-btn" variant="secondary">
+              <AiFillApple />
               Continue with Apple
             </Button>
           </Col>
