@@ -56,7 +56,7 @@ function Home() {
       <div>
         <h1>Welcome home</h1>
         {isLoading? <Loader/> : accommodations?.map(acc => 
-        <Card>
+        <Card key={acc._id}>
         <Card.Title>{acc.name.toUpperCase() }</Card.Title>
           <Card.Body></Card.Body>
         </Card>

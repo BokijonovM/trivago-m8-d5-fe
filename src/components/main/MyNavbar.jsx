@@ -48,7 +48,7 @@ function MyNavbar() {
   }, []);
 
   return (
-    <div>
+   
       <Navbar bg="light" expand="lg">
         <Nav.Link href="#home" className="p-0">
           <div className="mr-4 d-flex flex-column justify-content-center align-items-center">
@@ -86,11 +86,10 @@ function MyNavbar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
               <Nav.Link> {user && user.name}</Nav.Link>
-              <Link className="nav-link" to="/login" style={{ textDecoration: "none" }}>
-                Login
-            <Nav.Link>
-              <Link to="" style={{ textDecoration: "none" }}>
+              
+            <div className='nav-link'>
                 {isLoggedIn ? (
+                  <Link to="" style={{ textDecoration: "none" }}>
                   <Button
                     variant="transparent"
                     className="mr-2 shadow-none border-0"
@@ -98,21 +97,24 @@ function MyNavbar() {
                       localStorage.removeItem("MyToken");
                       window.location.href = "/";
                     }}
-                  >
+                    >
                     Logout
                   </Button>
+                    </Link>
                 ) : (
                   <Link to="/login">
                     <Button
                       className="mr-2 shadow-none border-0"
                       variant="transparent"
                       onClick={() => navigate("/login")}
-                    >
+                      >
                       Login
                     </Button>
-                  </Link>
-                )}
               </Link>
+              
+                )}
+            </div>
+
             <NavDropdown className="ml-5" title="Menu" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -141,7 +143,7 @@ function MyNavbar() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </div>
+   
   );
 }
 
