@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
 import { BsFillInboxFill } from "react-icons/bs";
 import { AiFillCar } from "react-icons/ai";
 import { IoMdAirplane } from "react-icons/io";
 import { RiLuggageDepositLine } from "react-icons/ri";
 import "./style.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function MyNavbar() {
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const myToken = localStorage.getItem("MyToken");
+  const dataJson = JSON.parse(JSON.stringify(myToken));
+  const navigate = useNavigate();
   const [user, setUser] = useState()
 
   useEffect(() => {
-    setTimeout(
-      fetchData(window.localStorage.getItem("token")),5000)
+    if (dataJson) {
+      setIsLoggedIn(true);
+      fetchData(dataJson)
+    }
   },[])
   
   const fetchData = async(token) => {
@@ -36,6 +42,10 @@ function MyNavbar() {
       
     }
   }
+
+  useEffect(() => {
+    
+  }, []);
 
   return (
     <div>
@@ -78,6 +88,30 @@ function MyNavbar() {
               <Nav.Link> {user && user.name}</Nav.Link>
               <Link className="nav-link" to="/login" style={{ textDecoration: "none" }}>
                 Login
+            <Nav.Link>
+              <Link to="" style={{ textDecoration: "none" }}>
+                {isLoggedIn ? (
+                  <Button
+                    variant="transparent"
+                    className="mr-2 shadow-none border-0"
+                    onClick={() => {
+                      localStorage.removeItem("MyToken");
+                      window.location.href = "/";
+                    }}
+                  >
+                    Logout
+                  </Button>
+                ) : (
+                  <Link to="/login">
+                    <Button
+                      className="mr-2 shadow-none border-0"
+                      variant="transparent"
+                      onClick={() => navigate("/login")}
+                    >
+                      Login
+                    </Button>
+                  </Link>
+                )}
               </Link>
             <NavDropdown className="ml-5" title="Menu" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

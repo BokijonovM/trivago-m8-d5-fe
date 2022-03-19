@@ -7,10 +7,41 @@ import OauthLinks from "./OauthLinks";
 function MySignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
   const navigate = useNavigate();
 
+  const handleRegister = async () => {
+    const newPost = {
+      name: name,
+      surname: lastName,
+      email: email,
+      password: password,
+    };
+    try {
+      let res = await fetch("http://localhost:3001/users/register", {
+        method: "POST",
+        body: JSON.stringify(newPost),
+        headers: { "Content-type": "application/json" },
+      });
+      if (res.status !== 200) {
+        // handleOpen();
+        alert("you you entered wrong password or email");
+        // setOpen(true);
+      }
+      if (res.ok) {
+        let data = await res.json();
+        localStorage.setItem("MyToken", data.token);
+        console.log(data.posts);
+        console.log("Successfully registered!");
+        navigate("/home");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handelRegister = () => {
-    navigate("/");
+    handleRegister();
   };
   return (
     <div className="main-div-login">
@@ -49,12 +80,27 @@ function MySignUp() {
                   placeholder="Enter password"
                 />
               </Form.Group>
+              <Form.Group controlId="formBasicName">
+                <Form.Label>First Name</Form.Label>
+                <Form.Control
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="shadow-none"
+                  type="text"
+                  placeholder="Enter Your name"
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicLastName">
+                <Form.Label>Last Name</Form.Label>
+                <Form.Control
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  className="shadow-none"
+                  type="text"
+                  placeholder="Enter Your surname"
+                />
+              </Form.Group>
             </Form>
-            <p className="mb-0 mt-3">Password requirements</p>
-            <p className="mb-0 text-muted ml-3">Has minimum 10 characters.</p>
-            <p className="mb-0 text-muted ml-3">
-              Contains at least 1 upper case character.
-            </p>
             <Button
               className="mt-3 mb-5"
               variant="secondary"
@@ -67,7 +113,7 @@ function MySignUp() {
           </Col>
           <div className="col-3-login pl-3 mt-5"></div>
           <Col className="col-2-login pl-3">
-          <OauthLinks/>
+            <OauthLinks />
           </Col>
         </Row>
       </div>
