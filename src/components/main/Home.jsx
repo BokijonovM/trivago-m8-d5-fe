@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
 import {useQueryParameter} from "../hooks/index.js";
 import Loader from "./Loader.jsx";
+import SingleAccommodation from "./SingleAccommodation.jsx";
 
 function Home() {
 
@@ -55,12 +56,7 @@ function Home() {
     return ( 
       <div>
         <h1>Welcome home</h1>
-        {isLoading? <Loader/> : accommodations?.map(acc => 
-        <Card key={acc._id}>
-        <Card.Title>{acc.name.toUpperCase() }</Card.Title>
-          <Card.Body></Card.Body>
-        </Card>
-          )}
+        {isLoading? <Loader/> : accommodations?.map(acc => <SingleAccommodation acc={acc}/>)}
       </div>
      );
 }
