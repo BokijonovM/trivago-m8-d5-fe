@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import "./style.css";
 import { Row, Col, Button, Form } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineGooglePlus, AiFillApple } from "react-icons/ai";
 import { FaFacebookSquare } from "react-icons/fa";
-import OauthLinks from "../login/OauthLinks";
+import { useNavigate, Link } from "react-router-dom";
+import OauthLinks from "./OauthLinks";
 
-function MySignUp() {
+function MyLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -51,11 +52,6 @@ function MySignUp() {
                 />
               </Form.Group>
             </Form>
-            <p className="mb-0 mt-3">Password requirements</p>
-            <p className="mb-0 text-muted ml-3">Has minimum 10 characters.</p>
-            <p className="mb-0 text-muted ml-3">
-              Contains at least 1 upper case character.
-            </p>
             <Button
               className="mt-3 mb-5"
               variant="secondary"
@@ -63,17 +59,22 @@ function MySignUp() {
               disabled={!email || !password}
               onClick={() => handelRegister()}
             >
-              Register
+              Login
             </Button>
           </Col>
           <div className="col-3-login pl-3 mt-5"></div>
-          <Col className="col-2-login pl-3">
-          <OauthLinks/>
+          <Col className="col-2-login pl-3 mb-5">
+            <OauthLinks/>
           </Col>
         </Row>
       </div>
+      <Link to="/signUp">
+        <Button className="create-account-btn py-3 px-5" variant="secondary">
+          Create an account
+        </Button>
+      </Link>
     </div>
   );
 }
 
-export default MySignUp;
+export default MyLogin;

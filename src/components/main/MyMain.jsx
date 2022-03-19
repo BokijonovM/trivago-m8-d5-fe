@@ -1,5 +1,5 @@
 import React from "react";
-import MainNav from "./MainNav";
+import MainNav from "./MyNavbar";
 import { Row, Button, Form } from "react-bootstrap";
 import MyFooter from "./MyFooter";
 import { BsSearch, BsFillCalendarEventFill, BsPeople } from "react-icons/bs";
